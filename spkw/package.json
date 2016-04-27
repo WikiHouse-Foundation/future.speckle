@@ -1,28 +1,40 @@
 {
-  "name": "future.viewer",
-  "version": "0.0.1",
-  "description": "soulution and performance space visualiser",
-  "author": "Dimitrie Andrei Stefanescu | http://dimitrie.org",
-  "license": "MIT",
-  "scripts": {
-    "watch-sass": "sass --watch src/sass/:dist/css/",
-    "watch-jade": "jade --watch src/jade/*.jade -o dist/html/",
-    "build-js": "browserify src/js/Default.js -o dist/js/Default.js & browserify src/js/Template.js -o dist/js/Template.js",
-    "watch-js": "nodemon -e js -w src/js -x 'npm run build-js'",
-    "watch": "echo DEPRECATED: ALL COMMANDS MOVED IN MAIN REPO package.json"
-  },
-  "dependencies": {
-    "browserify": "^13.0.0",
-    "d3": "^3.5.16",
-    "jade": "^1.11.0",
-    "jquery": "^2.2.0",
-    "nodemon": "^1.8.1",
-    "normalize-scss": "^4.0.3",
-    "nouislider": "github:leongersen/noUiSlider",
-    "shortid": "^2.2.4",
-    "three": "^0.73.2",
-    "three-orbit-controls": "^72.0.0",
-    "tween.js": "^16.3.4",
-    "wolfy87-eventemitter": "^4.3.0"
-  }
+    "name": "future.viewer",
+    "version": "0.0.1",
+    "description": "soulution and performance space visualiser",
+    "author": "Dimitrie Andrei Stefanescu | http://dimitrie.org",
+    "license": "MIT",
+    "scripts": {
+        "watch-sass": "node-sass --watch src/sass/ --output dist/css/",
+        "watch-jade": "jade --watch src/jade/*.jade -o dist/html/",
+        "watch-js": "webpack --config builder/viewer-dev/webpack.config.js",
+        "watch": "npm run watch-sass & npm run watch-jade & npm run watch-js"
+    },
+    "devDependencies": {
+        "nodemon": "^1.8.1",
+
+        "webpack": "*",
+        "css-loader": "*",
+        "style-loader": "*",
+        "sass-loader": "*",
+        "file-loader": "*",
+        "url-loader": "*",
+        "extract-text-webpack-plugin": "*",
+
+        "babel-core": "*",
+        "babel-loader": "*",
+        "babel-preset-es2015": "*",
+
+        "jade": "^1.11.0",
+
+        "d3": "^3.5.16",
+        "jquery": "^2.2.0",
+        "normalize-scss": "^4.0.3",
+        "nouislider": "github:leongersen/noUiSlider",
+        "shortid": "^2.2.4",
+        "three": "^0.73.2",
+        "three-orbit-controls": "^72.0.0",
+        "tween.js": "^16.3.4",
+        "wolfy87-eventemitter": "^4.3.0"
+    }
 }
