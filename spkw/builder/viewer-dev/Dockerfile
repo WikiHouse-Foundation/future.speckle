@@ -7,15 +7,8 @@ RUN apt-get update -qq
 RUN apt-get install -t unstable -y nginx-full nginx-common
 COPY nginx.conf /etc/nginx/nginx.conf
 
-#project specific node modules
-RUN npm install -g nodemon webpack jade
-
-# `--unsafe-perm` is a workaround for https://github.com/sass/node-sass/issues/428
-RUN npm install -g --unsafe-perm node-sass
-
 RUN mkdir -p /var/www/node/dist
 RUN ln -s /var/www/node/dist /usr/share/nginx/html
 
 WORKDIR /var/www/node
 CMD /var/www/node/builder/viewer-dev/builderStart.sh
-
