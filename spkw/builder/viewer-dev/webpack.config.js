@@ -1,14 +1,13 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     context: "/var/www/node/src",
-    entry: [
-        "./js/Default.js",
-        "./js/Multiple.js",
-        "./js/Parallel.js",
-        "./js/Split.js",
-        "./js/Template.js"
-    ],
-    watch: true,
+    entry: {
+        Default: "./js/Default.js",
+        Multiple: "./js/Multiple.js",
+        Parallel: "./js/Parallel.js",
+        Split: "./js/Split.js",
+        Template: "./js/Template.js"
+    },
     output: {
         path: "/usr/share/nginx/html/",
         publicPath: "/",
