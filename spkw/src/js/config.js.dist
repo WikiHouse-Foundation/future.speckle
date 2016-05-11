@@ -1,0 +1,15 @@
+/*
+ * The MIT License (MIT)
+ * Copyright (c) 2016 Dimitrie Andrei Stefanescu & University College London (UCL)
+ */
+
+// to make things work please copy this file to spkw/dist/static/config.js
+// edit root URL or API paths if needed for your server
+
+window.SPKConfig = {};
+window.SPKConfig.ORIGIN     = 'http://beta.speckle.xyz';
+window.SPKConfig.APPDIR     = window.SPKConfig.ORIGIN;
+window.SPKConfig.UPLOADDIR  = window.SPKConfig.ORIGIN + "/uploads";
+window.SPKConfig.GEOMAPI    = window.SPKConfig.ORIGIN + "/api/model/";
+window.SPKConfig.METAAPI    = window.SPKConfig.ORIGIN + "/api/model/metadata/";
+window.SPKConfig.INSTAPI    = window.SPKConfig.ORIGIN + "/api/model/instances/";

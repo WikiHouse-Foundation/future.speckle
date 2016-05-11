@@ -1,6 +1,6 @@
 
 var $                   = require('jquery')
-var SPK                 = require('./modules/SPK.js')
+var SPK                 = require('./modules/SPK.jsx').default;
 var SPKMeta             = require('./modules/SPKMetaDisplay.js')
 var SPKSliderControl    = require('./modules/SPKSliderControl.js')
 var SPKCommentsControl  = require('./modules/SPKCommentsControl.js')

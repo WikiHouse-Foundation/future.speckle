@@ -4,10 +4,11 @@ views/partials/analytics.js
 uploads
 node_modules
 config.deploy
+.sass-cache/
+**/.sass-cache/*
+*.log
+
 spkw/.srcbackup/
 spkw/node_modules/
 spkw/*.map/
 spkw/dist/
-.sass-cache/
-**/.sass-cache/*
-*.log
