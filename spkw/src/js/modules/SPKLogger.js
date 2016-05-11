@@ -6,7 +6,6 @@
 
 
 var $           = require('jquery');
-var SPKConfig   = require('./SPKConfig.js');
 
 var SPKLogger = function () {
 

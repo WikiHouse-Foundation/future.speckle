@@ -6,7 +6,6 @@
 
 var $               = require('jquery');
 var shortid         = require('shortid');
-var SPKConfig       = require('./SPKConfig.js');
 var THREE           = require('three');
 
 var SPKCommentsControl = function ( options ) {
