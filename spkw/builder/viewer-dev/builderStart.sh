@@ -1,7 +1,6 @@
 service nginx restart
 
-if [ ! -d "/var/www/node/node_modules" ]; then
-    npm install
-fi
+npm install
 
 npm run watch-all
+
