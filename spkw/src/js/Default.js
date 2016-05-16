@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var SPK = require('./modules/SPK.jsx').default;
 var SPKMeta = require('./modules/SPKMetaDisplay.js');
-var SPKSliderControl = require('./modules/SPKSliderControl.js');
+var SPKSliderControl = require('./modules/SPKSliderControl.jsx').default;
 var SPKCommentsControl = require('./modules/SPKCommentsControl.js');
 var SPKHelpControl = require('./modules/SPKHelpControl.js');
 var SPKKeyHandler = require('./modules/SPKKeyHandler.js');
@@ -13,7 +13,7 @@ $(function () {
 
             var myMeta = new SPKMeta({
                 wrapperid: 'spk-metadata',
-                spk: SPK.META
+                spk: SPK
             });
 
             var mySliderCtrl = new SPKSliderControl({
@@ -25,6 +25,7 @@ $(function () {
                 showmeasures: true,
                 spk: SPK
             });
+            mySliderCtrl.init();
 
             var myCommentCtrl = new SPKCommentsControl({
                 wrapperid: 'spk-comments',
@@ -49,5 +50,8 @@ $(function () {
             //window.SPK = mySPK;
         }
     });
-    mySPK.init();
+
+    var locationPath = window.location.pathname;
+    var modelId = locationPath.substr(locationPath.lastIndexOf('/') + 1);
+    mySPK.init(modelId);
 });

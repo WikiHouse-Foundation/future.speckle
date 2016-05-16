@@ -1,11 +1,11 @@
 
 var $                   = require('jquery')
 var SPK                 = require('./modules/SPK.jsx').default;
-var SPKMeta             = require('./modules/SPKMetaDisplay.js')
-var SPKSliderControl    = require('./modules/SPKSliderControl.js')
-var SPKCommentsControl  = require('./modules/SPKCommentsControl.js')
-var SPKHelpControl      = require('./modules/SPKHelpControl.js')
-var SPKKeyHandler       = require('./modules/SPKKeyHandler.js')
+var SPKMeta             = require('./modules/SPKMetaDisplay.js');
+var SPKSliderControl    = require('./modules/SPKSliderControl.jsx').default;
+var SPKCommentsControl  = require('./modules/SPKCommentsControl.js');
+var SPKHelpControl      = require('./modules/SPKHelpControl.js');
+var SPKKeyHandler       = require('./modules/SPKKeyHandler.js');
 
 $( function () {
 
@@ -62,7 +62,8 @@ $( function () {
       }
       $("#spk-measures").html(formattedMeasure);
     }
-  } )
+  });
+  mySPK.init(modelId); //@TODO pass modelId here
 
-} )
+});
 

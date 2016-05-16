@@ -1,12 +1,12 @@
 
-var $                   = require('jquery')
+var $                   = require('jquery');
 var SPK                 = require('./modules/SPK.jsx').default;
-var SPKMeta             = require('./modules/SPKMetaDisplay.js')
-var SPKSliderControl    = require('./modules/SPKSliderControl.js')
-var SPKCommentsControl  = require('./modules/SPKCommentsControl.js')
-var SPKHelpControl      = require('./modules/SPKHelpControl.js')
-var keyhandler          = require('./modules/SPKMultipleKeyHandler.js')
-var camsync             = require('./modules/SPKCameraSync.js')
+var SPKMeta             = require('./modules/SPKMetaDisplay.js');
+var SPKSliderControl    = require('./modules/SPKSliderControl.jsx').default;
+var SPKCommentsControl  = require('./modules/SPKCommentsControl.js');
+var SPKHelpControl      = require('./modules/SPKHelpControl.js');
+var keyhandler          = require('./modules/SPKMultipleKeyHandler.js');
+var camsync             = require('./modules/SPKCameraSync.js');
 
 
 $( function () {
@@ -35,6 +35,7 @@ $( function () {
         showmeasures: false,
         spk : SPK
       } );
+      mySliderCtrl.init();
     },
     onInstanceChange : function ( data, key ) { 
       var mymeasures = "";
@@ -52,7 +53,9 @@ $( function () {
       }
       $("#spk-measures-1").html(formattedMeasure);
     }
-  } )
+  } );
+  myFirstSPK.init(modelId); //@TODO pass modelId here
+
 
   var mySecondSPK  = new SPK( 
   {
@@ -73,7 +76,8 @@ $( function () {
         showmeasures: false,
         spk : SPK
       } );
-      
+      mySliderCtrl.init();
+
       keyhandler.init({
         shadows: false,
         grid: true
@@ -95,7 +99,8 @@ $( function () {
       }
       $("#spk-measures-2").html(formattedMeasure);
     }
-  })
+  });
+  mySecondSPK.init(modelId); //@TODO pass modelId here
 
-} )
+});
 
